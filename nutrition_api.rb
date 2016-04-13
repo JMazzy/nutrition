@@ -1,8 +1,6 @@
 require 'HTTParty'
 
 class NutritionAPI
-  include 'HTTParty'
-
   KEY = "DQTsYwZAqhsAlpqz2YbXmsXa2Z3eVwylM2KPfAKg"
   BASE_URL = "http://api.nal.usda.gov/ndb/reports/?api_key=#{KEY}"
   REQUEST_TYPES = ["ndbno"]
@@ -17,5 +15,4 @@ class NutritionAPI
     response = HTTParty.get("#{BASE_URL}&#{request_type}=#{request_value}")
     p response
   end
-
 end
